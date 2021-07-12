@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets\css\estilo.css">
+    <title>Página de Busca</title>
+</head>
+	<body>
+        <header class="cabecalho">
+            <main class="principal">
+              <h1>Busca por nomes</h1>
+        </header>
+        <div class="conteudo">
+        <nav class="lista">
+            <div class="estilolista">
+            <h3>Selecione o nome</h3>
+		        <select class="seletor" id="nome" onChange="update()">
+                <option value=""></option>
+			    <option value="Paraná">Amanda</option>
+			    <option value="Santa Catarina">Aline</option>
+			    <option value="São Paulo">Alexa</option>
+                <option value="Paraná">Bruna</option>
+                <option value="Acre">Marcos</option>
+		    </select>
+
+            <h3>Estado</h3>
+            <input class="seletor" type="text" id="estado">
+            <h3>Nome</h3>
+		        <input class="seletor" type="text" id="nomes">  
+            <button class="button" id="search">Ok</button>
+            </div> 
+            
+            <h2 class="filtro">Nome localizado:</h2>
+            <div id="filteredList">
+            </div>
+
+        </div>
+		<script type="text/javascript">
+			function update() {
+				var select = document.getElementById('nome');
+				var option = select.options[select.selectedIndex];
+
+                document.getElementById('estado').value = option.value;
+				document.getElementById('nomes').value = option.text; 
+			}
+			update();
+		</script>
+
+<script type="text/javascript">
+    function filterByKeyword(filterKeyword) {
+      var nome = document.querySelector('#nome').childNodes
+      var newFilteredUl = document.getElementById('nomes')
+     
+      
+
+      try {
+        for (var i = 0, length = nome.length; i < length; i++) { 
+          if (nome[i].nodeType != 1 && null != nome[i].nextSibling) {
+            if (nome[i].nextSibling.innerText == filterKeyword) {
+              var newLi = document
+                .createElement('option') 
+              var newLiText = document
+                .createTextNode(filterKeyword)
+              newLi.appendChild(newLiText)
+            }
+          }
+        }
+      
+      newFilteredUl.appendChild(newLi)
+      } catch (e) { 
+        console.error(e)
+      }
+      return newFilteredUl
+    }
+
+    var button = document.querySelector('#search')
+    button.onclick = function() {
+      var keyword = document.querySelector('#estado').value
+
+      var newList = filterByKeyword(keyword)
+      document.querySelector('#filteredList').appendChild(newList)
+    }
+  </script>
+        
+        <Footer class="rodape">Teste VIVO</Footer>
+    </nav>
+    </main>
+	</body>
+</html>
