@@ -1,0 +1,145 @@
+* {
+    font-family: 'Oswald', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    margin: 0px;
+    display: grid;
+    grid-template-rows: 100px 1fr 60px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "cabecalho" 
+    "principal" 
+    "rodape";
+}
+
+.cabecalho{
+    grid-area: cabecalho;
+    background-color:rgba(255, 255, 255, 0.966);
+    color: rgba(82, 13, 146, 0.966);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+    z-index: 1;
+    box-shadow: 2px 3px 5px -1px rgba(0,0,0,0.68);
+}
+
+.cabecalho >h1{
+    margin: 0px;
+    font-weight: 300;
+    font-size: 2.8rem;
+}
+
+.cabecalho >h2{
+    margin: 0px;
+    font-weight: 200;
+    font-size: 1.6rem;
+}
+
+.principal{
+    grid-area: principal;
+    height: calc(100vh - 180px);
+    padding: 20px;
+}
+
+.conteudo{
+    position: relative;
+    height: 50%;
+    overflow-y: scroll;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.68);
+}
+
+.rodape{
+    grid-area: rodape;
+    background-color:snow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    padding: 20px;
+    color: rgba(82, 13, 146, 0.966);
+}
+
+.lista{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.estlolista{
+  flex-basis:  30%;  
+}
+
+.estilolista > h3{
+    margin: 10px;
+    color: white;
+    font-weight: 300;
+    font-size: 1.2rem;
+    padding: 3px 20px;
+    background-color: rgba(82, 13, 146, 0.966);
+    justify-content: left; 
+    align-items: left;
+    flex: 1;
+}
+
+.estilolista{
+    display:flex;  
+    text-decoration: none;
+    color: rgb(56, 55, 55);
+    justify-content: left; 
+    align-items: left;
+    flex: 1;
+}
+
+.seletor{
+    margin: 10px;
+    font-weight: 300;
+    font-size:small;
+    padding: 5px 5px;
+    background-color: rgb(255, 255, 255);
+    justify-content: left; 
+    align-items: left;
+    flex: 1;
+}
+
+.button{
+    margin: 10px;
+    font-weight: 300;
+    font-size:small;
+    background-color: rgb(255, 255, 255);
+    justify-content: left; 
+}
+
+.filtro > h2{
+    
+    color: white;
+    font-weight: 300;
+    font-size: 1.2rem;
+    padding: 3px 20px;
+    background-color: rgba(82, 13, 146, 0.966);
+    justify-content: left; 
+    align-items: left;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.filtro {
+    margin: 10px;
+    flex-basis: 100%;
+    height: 50%;
+    color: rgb(76, 16, 116);
+    font-weight: 300;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bolder;
+    padding: 3px 20px;
+    box-shadow: 2px 3px 5px -1px rgba(0,0,0,0.68);
+  }
